@@ -1,0 +1,199 @@
+:root {
+  --primary-color: #00bcd4;
+  --secondary-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+    url('https://media.istockphoto.com/id/479842074/photo/empty-road-at-building-exterior.jpg?s=612x612&w=0&k=20&c=SbyfZGN0i2O_QPLCdBcu9vhuzbQvTz4bGEn-lIzrN0E=')
+    center/cover no-repeat fixed;
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 4rem 1rem;
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.5);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  animation: fadeSlide 2s ease forwards;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #e0f7fa;
+  animation: fadeSlide 2.5s ease forwards;
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.08);
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  text-align: center;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+section.reveal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  flex: 1 1 280px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 2rem 1rem 4rem 1rem;
+  transition: transform 0.4s, background 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+}
+
+.card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  transition: transform 0.5s;
+}
+
+.card:hover i {
+  transform: rotate(10deg) scale(1.15);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+.card .details {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: 0 0 15px 15px;
+  transition: bottom 0.4s ease;
+  text-align: left;
+}
+
+.card:hover .details {
+  bottom: 0;
+}
+
+.card .details p {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.floating-button:hover {
+  background: #0097a7;
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(0,0,0,0.7);
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.butterfly {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/1/15/Animated_butterfly.gif') center/contain no-repeat;
+  animation: fly 20s linear infinite;
+  pointer-events: none;
+  z-index: 50;
+}
+
+@keyframes fly {
+  0% { transform: translate(-10%, 0) rotate(0deg); }
+  25% { transform: translate(50vw, 30vh) rotate(20deg); }
+  50% { transform: translate(90vw, 60vh) rotate(-20deg); }
+  75% { transform: translate(50vw, 80vh) rotate(10deg); }
+  100% { transform: translate(-10%, 100vh) rotate(0deg); }
+}
+
+@media (max-width: 768px) {
+  header h1 { font-size: 2rem; }
+  section h2 { font-size: 1.5rem; }
+  .card-container { flex-direction: column; align-items: center; }
+}

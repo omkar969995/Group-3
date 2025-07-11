@@ -1,35 +1,51 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
 body {
-  font-family: Space Grotesk, sans-serif;
-  background-color: #ffffff;
-  color: #333333;
-  line-height: 1.6;
-  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  background-color: #0dc2e2;
+  margin: 0;
+  padding: 20px;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
+h2 {
+  color: #0073e6;
+  margin-bottom: 20px;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: bold;
+ul.industry-list {
+  list-style: square;
+  padding-left: 20px;
+  margin-bottom: 30px;
 }
 
-a {
-  color: inherit;
+ul.industry-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #0073e6;
+  color: #fff;
   text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
+
+.download-button:hover {
+  background-color: #005bb5;
+}
+
+.download-button::before {
+  content: "📥 ";
+}
+
